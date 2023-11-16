@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include "shared/nav/navbar.html.twig" %}
+{% endblock %}
+{% block body %}
+    {% if mode is same as "initiate" %}
+        <div class="d-flex align-items-center justify-content-around container mt-sm-5 my-1">
+            {% include "games/ticTacToe/initiate.html.twig" %}
+        </div>
+    {% elseif mode is same as "duel" %}
+        <div class="ticTacToe-container container mt-sm-5 my-1">
+            {% include "games/ticTacToe/duel.html.twig" %}
+        </div>
+    {% elseif mode is same as "result" %}
+        {% include "games/ticTacToe/result.html.twig" %}
+    {% endif %}
+{% endblock %}

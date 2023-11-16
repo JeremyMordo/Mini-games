@@ -1,0 +1,38 @@
+{% set dto = app.session.get('dto') %}
+<div class="container my-sm-2 my-1">
+    {{ form_start(form) }}
+    <div class="question">
+            <div class="d-flex justify-content-between m-2">
+                <h4 class="m-2">Question n° {{ dto.questionNumber }} sur 20 :</h4>
+            </div>
+            <div class="m-2 h5 text-center"><b>A quel pays appartient ce drapeau ?</b></div>
+            <div class="mx-2 mt-5 d-flex justify-content-center">
+                <img class="m-2" src= "{{ dto.flagUrl }}" alt="flag_image">
+            </div>
+            <label class="d-flex flex-column justify-content-center my-5 mx-2 ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                {% block choice_widget %}
+                    {% for child in form.answer.children %}
+                        <div class="d-flex text-center">
+                            <p class="col-4 m-3 text-right">
+                            {{ form_widget(child) }}
+                            </p>
+                            <p class="col-8 m-3 text-left">
+                            {{ form_label(child) }}
+                            </p>
+                        </div>
+                    {% endfor %}
+                {% endblock choice_widget %}
+            </label>
+        </div>
+        <div class="buttons">
+            <div class="d-flex justify-content-around pt-3">
+                <a class="btn btn-danger btn-lg" href="/games/flagQuiz/refresh">
+                    Le drapeau ne s'affiche pas ?
+                </a>
+                <div class="ml-auto mr-sm-5">
+                    {{ form_row(form.submit) }}
+                </div>
+            </div>
+        </div>
+    {{ form_end(form) }}
+</div>

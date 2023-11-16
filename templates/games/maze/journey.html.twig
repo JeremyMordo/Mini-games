@@ -1,0 +1,67 @@
+<div class="container maze-legend-container">
+    <div class="row w-100 justify-content-around m-auto pb-3">
+        <h2 class="col-4 d-flex justify-content-around align-items-center">
+            Légende :
+        </h2>
+        <div class="col-4 d-flex justify-content-around align-items-center">
+            <h3>Avancer : </h3>
+            <a class="maze-move-btn col-1 btn-success bi bi-arrow-right h3 d-flex align-items-center justify-content-center btn-sm">
+            </a>
+        </div>
+        <div class="col-4 d-flex justify-content-around align-items-center">
+            <h3>Pivoter : </h3>
+            <a class="maze-pivote-btn col-1 btn-success bi bi-caret-right h3 d-flex align-items-center justify-content-center btn-sm">
+            </a>
+        </div>
+    </div>
+    <div class="row w-100 justify-content-center align-items-center m-auto py-3">
+        <h2 class="col-3 d-flex justify-content-center align-items-center">Orientation : </h2>
+        <h2 class="col-3 d-flex justify-content-center align-items-center">
+            {% if dto.orientation is same as 'N' %}
+                Nord
+            {% elseif dto.orientation is same as  'E' %}
+                Est
+            {% elseif dto.orientation is same as  'S' %}
+                Sud
+            {% elseif dto.orientation is same as  'W' %}
+                Ouest
+            {% endif %}
+        </h2>
+    </div>
+</div>
+{% if error is defined %}
+    <div class="m-3 text-center d-flex justify-content-center">
+        <div class="alert alert-danger">
+            <h4>{{ error }}</h4>
+        </div>
+    </div>
+{% endif %}
+<div class="container maze-journey-container">
+    <div class="row flex-column d-flex align-items-center justify-content-center">
+        <a class="maze-move-btn col-1 btn-success bi bi-arrow-up h3 d-flex align-items-center justify-content-center m-1" href="/games/maze/move-north">
+        </a>
+        <a class="maze-pivote-btn col-1 btn-success bi bi-caret-up h3 d-flex align-items-center justify-content-center m-1" href="/games/maze/pivote-north">
+        </a>
+    </div>
+    <div class="row d-flex align-items-center justify-content-center">
+        <a class="maze-move-btn col-1 btn-success bi bi-arrow-left h3 d-flex align-items-center justify-content-center btn-sm m-1" href="/games/maze/move-west">
+        </a>
+        <a class="maze-pivote-btn col-1 btn-success bi bi-caret-left h3 d-flex align-items-center justify-content-center btn-sm m-1" href="/games/maze/pivote-west">
+        </a>
+        {% if image is same as "forward" %}
+            <img class="col-7 m-5" src= "{{ asset('build/forward.png') }}" alt="img">
+        {% elseif image is same as "wall" %}
+            <img class="col-7 m-5" src= "{{ asset('build/wall.png') }}" alt="img">
+        {% endif %}
+        <a class="maze-pivote-btn col-1 btn-success bi bi-caret-right h3 d-flex align-items-center justify-content-center btn-sm m-1" href="/games/maze/pivote-east">
+        </a>
+        <a class="maze-move-btn col-1 btn-success bi bi-arrow-right h3 d-flex align-items-center justify-content-center btn-sm m-1" href="/games/maze/move-east">
+        </a>
+    </div>
+    <div class="row flex-column d-flex align-items-center justify-content-center">
+        <a class="maze-pivote-btn col-1 btn-success bi bi-caret-down h3 d-flex align-items-center justify-content-center" href="/games/maze/pivote-south">
+        </a>
+        <a class="maze-move-btn col-1 btn-success bi bi-arrow-down h3 d-flex align-items-center justify-content-center" href="/games/maze/move-south">
+        </a>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include "shared/nav/navbar.html.twig" %}
+{% endblock %}
+{% block body %}
+<div class="container-contact d-flex flex-column align-items-center justify-content-center">
+    <h2>Décrivez-nous le bogue</h2>
+    <form action="https://formspree.io/f/xoqobdrn" method="post" id="contact_form">
+        <div class="name">
+            <label for="name"></label>
+            <input type="text" placeholder="Mon nom" name="name" id="name_input" required>
+        </div>
+        <div class="email">
+            <label for="email"></label>
+            <input type="email" placeholder="Mon e-mail" name="email" id="email_input" required>
+        </div>
+        <div class="company">
+            <label for="name"></label>
+            <input type="text" placeholder="Mon entreprise (optionnel)" name="company" id="company_input">
+        </div>
+        <div class="message">
+            <label for="message"></label>
+            <textarea name="message" placeholder="Mon message" id="message_input" cols="30" rows="5" required></textarea>
+        </div>
+        <div class="submit text-center">
+            <input type="submit" value="Envoyez" id="form_button" />
+        </div>
+    </form>
+</div>
+{% endblock %}

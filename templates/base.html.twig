@@ -1,16 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ app.request.locale }}">
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <title>
+            {% block title %}
+                {{ 'Mini-games'|trans }}
+            {% endblock %}
+        </title>
+        {% block meta %}
+            {% include "shared/block/meta.html.twig" %}
+        {% endblock %}
+
+        {% block link %}
+            {% include "shared/block/link.html.twig" %}
+        {% endblock %}
+
         {% block stylesheets %}
+            {% include "shared/block/stylesheets.html.twig" %}
         {% endblock %}
 
         {% block javascripts %}
+            {% include "shared/block/javascripts.html.twig" %}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="container-fluid p-0">
+        {% block header %}
+        {% endblock %}
+
+        {% block errors %}
+        {% endblock %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% block newsletter %}
+        {% endblock %}
+
+        {% block footer %}
+        {% endblock %}
+
+        {% block back_to_top %}
+        {% endblock %}
     </body>
 </html>

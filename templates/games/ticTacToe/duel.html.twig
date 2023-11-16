@@ -1,0 +1,89 @@
+<div class="d-flex align-items-center flex-column w-auto">
+    {% if dto.winner is defined %}
+        {% if dto.winner is same as 1 %}
+            <h2 class="text-dark">Tu as gagné, bravo !</h2>
+            <a class="btn btn-success mt-2 mb-4" href="/games/ticTacToe">
+                <h3>Une autre partie ?</h3>
+            </a>
+        {% elseif dto.winner is same as 2 %}
+            <h2 class="text-dark">Bien tenté, dommage !</h2>
+            <a class="btn btn-success mt-2 mb-4" href="/games/ticTacToe">
+                <h3>Une autre partie ?</h3>
+            </a>
+        {% elseif dto.winner is same as 3 %}
+            <h2 class="text-dark">Egalité !</h2>
+            <a class="btn btn-success mt-2 mb-4" href="/games/ticTacToe">
+                <h3>Une autre partie ?</h3>
+            </a>
+        {% endif %}
+    {% endif %}
+    <div class="row">
+        {% if dto.coordinate.1 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 1 }) }}></a>
+        {% elseif dto.coordinate.1 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.1 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.2 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 2 }) }}></a>
+        {% elseif dto.coordinate.2 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.2 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.3 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 3 }) }}></a>
+        {% elseif dto.coordinate.3 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.3 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if dto.coordinate.4 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 4 }) }}></a>
+        {% elseif dto.coordinate.4 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.4 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.5 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 5 }) }}></a>
+        {% elseif dto.coordinate.5 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.5 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.6 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 6 }) }}></a>
+        {% elseif dto.coordinate.6 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.6 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+    </div>
+    <div class="row">
+        {% if dto.coordinate.7 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 7 }) }}></a>
+        {% elseif dto.coordinate.7 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.7 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.8 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 8 }) }}></a>
+        {% elseif dto.coordinate.8 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.8 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+        {% if dto.coordinate.9 is same as 0 %}
+            <a class ="col-4 btn btn-grid p-0 m-0" href={{ path('ticTacToe-process', { 'grid': 9 }) }}></a>
+        {% elseif dto.coordinate.9 is same as 1 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/x.jpg') }}" alt="img">
+        {% elseif dto.coordinate.9 is same as 2 %}
+            <img class="col-4 image-grid p-0 m-0" src= "{{ asset('build/o.jpg') }}" alt="img">
+        {% endif %}
+    </div>
+</div>

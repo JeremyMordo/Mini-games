@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include "shared/nav/navbar.html.twig" %}
+{% endblock %}
+{% block body %}
+    <div class="d-flex align-items-center justify-content-center quiz-container container mt-sm-5 my-1">
+        {% if mode is same as "initiate" %}
+            {% include "games/flagQuiz/initiate.html.twig" %}
+        {% elseif mode is same as "question" %}
+            {% include "games/flagQuiz/quiz.html.twig" %}
+        {% elseif mode is same as "result" %}
+            {% include "games/flagQuiz/result.html.twig" %}
+        {% elseif mode is same as "cheater" %}
+            {% include "games/flagQuiz/cheater.html.twig" %}
+        {% endif %}
+    </div>
+{% endblock %}

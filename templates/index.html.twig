@@ -1,0 +1,15 @@
+{# templates/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include "shared/nav/navbar.html.twig" %}
+{% endblock %}
+{% block body %}
+    <div class="d-flex flex-column align-items-center">
+        <h1 class="index-message text-center my-5">
+            Bienvenu sur cette application regroupant quelques jeux tous publiques.<br>
+            De quoi s'occuper entre deux réunions.
+        </h1>
+        <img class="index-image mt-5" src="{{ asset('build/index-background.jpeg') }}">
+    </div>
+{% endblock %}

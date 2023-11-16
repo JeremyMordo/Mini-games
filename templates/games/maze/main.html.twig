@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block header %}
+    {% include "shared/nav/navbar.html.twig" %}
+{% endblock %}
+{% block body %}
+    {% if mode is same as "initiate" %}
+        <div class="d-flex align-items-center justify-content-around maze-initiate-container container mt-sm-5 my-1">
+            {% include "games/maze/initiate.html.twig" %}
+        </div>
+    {% elseif mode is same as "journey" %}
+        {% include "games/maze/journey.html.twig" %}
+    {% elseif mode is same as "escape" %}
+        {% include "games/maze/escape.html.twig" %}
+    {% endif %}
+{% endblock %}

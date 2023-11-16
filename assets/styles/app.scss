@@ -1,0 +1,263 @@
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+body {
+  background-color: #E3F1F4;
+}
+
+.index-image{
+  width: 60em;
+}
+
+.container {
+  background-color: #555;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+  min-height: 50em;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  text-decoration: none;
+}
+
+li{display:inline-block;min-width:50px;}
+li a {
+  text-decoration:none;
+  line-height: 70px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #444444;
+  text-transform: uppercase;
+}
+li a:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 1px;
+  width: 0;
+  background: transparent;
+  transition: width .5s ease, background-color .5s ease;
+}
+
+li a:hover:after {
+  width: 90%;
+  background: #444;
+}
+
+#test {
+  height: 2500px;
+}
+
+// Quiz //
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.quiz-container {
+  background-color: #555;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+  min-height: 50em;
+}
+
+.options{
+  position: relative;
+  padding-left: 40px;
+}
+
+#options label{
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.options input{
+  opacity: 0;
+}
+.checkmark {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #555;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+
+.options input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.options .checkmark:after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  background: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%,-50%) scale(0);
+  transition: 300ms ease-in-out 0s;
+}
+
+.options input[type="radio"]:checked ~ .checkmark{
+  background: #21bf73;
+  transition: 300ms ease-in-out 0s;
+}
+
+.options input[type="radio"]:checked ~ .checkmark:after{
+  transform: translate(-50%,-50%) scale(1);
+}
+
+.btn-primary{
+  background-color: #555;
+  color: #ddd;
+  border: 1px solid #ddd;
+}
+
+.btn-primary:hover{
+  background-color: #21bf73;
+  border: 1px solid #21bf73;
+}
+
+.btn-success{
+  padding: 5px 25px;
+  background-color: #21bf73;
+}
+
+.refresh-btn and .refresh-btn:hover{
+  text-decoration: none;
+}
+
+// Labyrinthe //
+
+.maze-initiate-container {
+  min-height: 50em;
+  background-color: #555;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+}
+
+.maze-legend-container {
+  background-color: #555;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+  min-height: 10em;
+}
+
+.maze-pivote-btn {
+  background-color: #6610f2;
+  width: 10px;
+  height: 30px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.maze-move-btn {
+  background-color: green;
+  width: 10px;
+  height: 30px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.maze-journey-container {
+  min-height: 50em;
+  background-color: lightblue;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+}
+
+.maze-escape-container {
+  min-height: 50em;
+  background-color: lightblue;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 1000px;
+}
+
+// TicTacToe //
+
+.ticTacToe-container{
+  min-height: 50em;
+  background-color: white;
+  color: #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  max-width: 700px;
+}
+
+.btn-grid {
+  border-color: red;
+  border-width: 2px;
+  background-color: white;
+  width: 15em;
+  height: 15em;
+}
+
+.image-grid {
+  width: 15em;
+  height: 15em;
+}
+
+// Contact //
+
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container-contact {
+  border-radius: 5px;
+  padding: 20px;
+}

@@ -1,0 +1,31 @@
+<div class="d-flex flex-column align-items-center justify-content-center">
+    {% if result == "good" %}
+    <div class="alert alert-success mb-5">
+        <h1> Bravo !</h1>
+    </div>
+    {% else %}
+        <div class="d-flex flex-column align-items-center justify-content-center alert alert-danger mb-5">
+            <h1> Dommage !</h1>
+            <h3>La bonne réponse était {{ dto.correctAnswer }}</h3>
+        </div>
+    {% endif %}
+    {% if dto.questionNumber == 20 %}
+        {% if dto.goodResult >= 15 %}
+            <h4>Excellent, tu es doué, tu as eu {{ dto.goodResult }} / 20 bonnes réponses.</h4>
+        {% elseif 14 > dto.goodResult >= 10  %}
+            <h4>C'est très bien, tu as eu {{ dto.goodResult }} / 20 bonnes réponses.</h4>
+        {% elseif 10 > dto.goodResult >= 5 %}
+            <h4>Pas trop mal, mais tu peux encore t'améliorer, tu as eu {{ dto.goodResult }} / 20 bonnes réponses.</h4>
+        {% elseif dto.goodResult < 5 %}
+            <h4>La courbe de progression est devant toi, tu as eu {{ dto.goodResult }} / 20 bonnes réponses.</h4>
+        {% endif %}
+        <h4></h4>
+        <a class="btn btn-success mt-5" href="/games/flagQuiz/initiate">
+            <h3>Une autre partie ?</h3>
+        </a>
+    {% else %}
+        <a class="btn btn-success mt-5" href="/games/flagQuiz/next">
+            Question suivante
+        </a>
+    {% endif %}
+</div>
